@@ -93,7 +93,7 @@ class ProductDetailsScreen extends StatelessWidget {
             const SizedBox(height: 16),
             if (product.reviews != null && product.reviews!.isNotEmpty)
               ...product.reviews!.map((review) {
-                String initials = review.reviewerName![0].toUpperCase();
+                String initials = review.reviewerName![0];
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 12.0),
                   child: Comments(
