@@ -93,7 +93,7 @@ class ProductDetailsScreen extends StatelessWidget {
             const SizedBox(height: 16),
             if (product.reviews != null && product.reviews!.isNotEmpty)
               ...product.reviews!.map((review) {
-                String initials = review.reviewerName![0];
+                String commenttext = review.reviewerName![0];
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 12.0),
                   child: Comments(
@@ -101,7 +101,7 @@ class ProductDetailsScreen extends StatelessWidget {
                     date: '${review.date!.day}/${review.date!.month}/${review.date!.year}',
                     rating: review.rating!,
                     comment: review.comment!,
-                    text: initials,
+                    text: commenttext,
                     color: Colors.blue[50]!,
                   ),
                 );
