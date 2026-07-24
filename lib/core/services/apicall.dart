@@ -6,7 +6,7 @@ class Apicall {
 
     Future<List<Product>> getProducts() async {
       Response response = await dio.get("https://dummyjson.com/products");
-      List<dynamic> productsData = response.data['products'];
+      List<Map<String, dynamic>> productsData = response.data['products'];
       return productsData.map((e) => Product.fromJson(e)).toList();
     }
 }
