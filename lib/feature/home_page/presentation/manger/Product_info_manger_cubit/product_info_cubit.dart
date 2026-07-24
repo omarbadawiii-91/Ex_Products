@@ -6,7 +6,8 @@ import 'package:flutter_application_1/feature/home_page/data/product_model/produ
 part 'product_info_state.dart';
 
 class ProductInfoCubit extends Cubit<ProductInfoState> {
-  ProductInfoCubit() : super(ProductInfoInitial());
+  Apicall apicall = Apicall();
+  ProductInfoCubit(this.apicall) : super(ProductInfoInitial());
 
   Future <List<Product>?> getProducts() async {
     emit(ProductInfoLoading());

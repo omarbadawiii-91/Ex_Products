@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/services/apicall.dart';
 import 'package:flutter_application_1/core/utils/theme.dart';
 import 'package:flutter_application_1/feature/home_page/presentation/manger/Product_info_manger_cubit/product_info_cubit.dart';
 import 'package:flutter_application_1/feature/home_page/presentation/views/home_page.dart';
@@ -18,7 +19,7 @@ class ExProducts extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(360, 844),
       child: BlocProvider(
-        create: (context) => ProductInfoCubit(),
+        create: (context) => ProductInfoCubit(Apicall()),
         child: MaterialApp(
           initialRoute: HomePage().homePageRoute,
           routes: {
